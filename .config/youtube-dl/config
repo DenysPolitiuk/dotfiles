@@ -1,0 +1,8 @@
+# always extract audio
+-x
+
+# do not copy the mtime
+--no-mtime
+
+# save everything in Music
+-o ~/Music/%(title)s.%(ext)s
