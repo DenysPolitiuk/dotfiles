@@ -54,9 +54,11 @@
 #; method = alsa
 #; source = hw:Loopback,1
 
-method = fifo
+#method = fifo
 # ; source = /tmp/mpd.fifo
-source = /home/boris/.config/mpd/mpd.fifo
+#source = /home/boris/.config/mpd/mpd.fifo
+method = pulse
+source = auto
 
 
 

@@ -29,9 +29,11 @@ font pango: DejaVu Sans Mono 11
 #
 # double monitor set up
 # for Radeon RX 570 case with 2 monitors
-exec --no-startup-id xrandr --output DVI-D-1 --primary --pos 0x0 --output HDMI-1 --pos 1920x0
+#exec --no-startup-id xrandr --output DVI-D-1 --primary --pos 0x0 --output HDMI-1 --pos 1920x0
 # for Intel GPU case with 2 monitors
 #exec --no-startup-id xrandr --output HDMI-3 --primary --pos 0x0 --output HDMI-1 --pos 1920x0
+exec --no-startup-id xrandr --output HDMI-3 --primary --pos 0x0 --output HDMI-2 --pos 1920x0 
+exec --no-startup-id xrandr --output HDMI-3 --left-of HDMI-2
 # load Xresources for terminal
 exec --no-startup-id xrdb ~/.Xresources
 # load background
@@ -292,4 +294,4 @@ bindsym Mod4+l exec --no-startup-id $Locker
 #
 # Please remove the following exec line:
 #######################################################################
-exec i3-config-wizard
+#exec i3-config-wizard

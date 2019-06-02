@@ -14,6 +14,11 @@ set ruler
 
 set nowrap
 
+"gvim
+set guioptions-=T
+set guioptions-=r
+set guifont=Noto\ Mono\ for\ Powerline\ Regular
+
 
 " Vundle
 set nocompatible              " be iMproved, required
@@ -57,6 +62,7 @@ Plugin 'w0rp/ale'
 " Plugin 'tmhedberg/simpylfold'
 Plugin 'fatih/vim-go'
 Plugin 'scrooloose/nerdcommenter'
+Plugin 'rust-lang/rust.vim'
 
 
 " All of your Plugins must be added before the following line
@@ -93,6 +99,10 @@ filetype plugin indent on    " required
 let g:ycm_python_binary_path = '/usr/bin/python3'
 let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_autoclose_preview_window_after_insertion = 1
+"let g:ycm_rust_src_path = '/home/boris/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/src'
+
+" Rust.vim
+let g:rustfmt_autosave = 1
 
 " NERDTree
 " Open nerdtree if no files where specified to vim

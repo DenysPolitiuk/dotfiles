@@ -18,6 +18,7 @@ prompt walters
 
 # Adding local bin to path
 export PATH=$PATH:~/.local/bin
+export PATH="$HOME/.cargo/bin:$PATH"
 
 # Aliases
 alias ls='ls --color=auto -a'
