@@ -17,7 +17,7 @@ set nowrap
 "gvim
 set guioptions-=T
 set guioptions-=r
-set guifont=Noto\ Mono\ for\ Powerline\ Regular
+set guifont=Noto\ Mono\ for\ Powerline\ Regular\ 12
 
 
 " Vundle
@@ -99,7 +99,8 @@ filetype plugin indent on    " required
 let g:ycm_python_binary_path = '/usr/bin/python3'
 let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_autoclose_preview_window_after_insertion = 1
-"let g:ycm_rust_src_path = '/home/boris/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/src'
+let g:ycm_rust_src_path = '/home/boris/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/src'
+map <C-p> :YcmCompleter GoTo<CR>
 
 " Rust.vim
 let g:rustfmt_autosave = 1
@@ -153,7 +154,7 @@ let g:airline#extenstions#ale#enabled = 1
 " Changes in message format
 let g:ale_echo_msg_error_str = 'E'
 let g:ale_echo_msg_warning_str = 'W'
-let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
+let g:ale_echo_msg_format = '[%severity%][%linter%]: %s'
 " Ale shortcuts
 nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 nmap <silent> <C-j> <Plug>(ale_next_wrap)
