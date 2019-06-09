@@ -19,6 +19,8 @@ set guioptions-=T
 set guioptions-=r
 set guifont=Noto\ Mono\ for\ Powerline\ Regular\ 12
 
+"shortcuts
+inoremap jj <ESC>
 
 " Vundle
 set nocompatible              " be iMproved, required
