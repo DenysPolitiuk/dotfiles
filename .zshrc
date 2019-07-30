@@ -19,11 +19,16 @@ prompt walters
 # Adding local bin to path
 export PATH=$PATH:~/.local/bin
 export PATH="$HOME/.cargo/bin:$PATH"
+export PATH=$PATH:~/.nvm/versions/node/v12.7.0/bin
 
 # Aliases
-alias ls='ls --color=auto -a'
+alias ls='ls --color=auto'
+alias lsa='ls --color=auto -a'
 alias grep='grep --color=auto'
 alias new='. new'
+alias rmi='rm -I'
+alias diff='diff --color=auto'
+alias adog='git log --all --decorate --oneline --graph'
 
 # Disable Ctrl+s. Can be fixed by using Ctrl+q
 stty -ixon

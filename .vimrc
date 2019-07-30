@@ -9,15 +9,24 @@ set number
 autocmd Filetype go setlocal tabstop=4
 autocmd Filetype go setlocal shiftwidth=4
 
+autocmd Filetype html setlocal tabstop=4
+autocmd Filetype html setlocal shiftwidth=4
+autocmd Filetype json setlocal tabstop=4
+autocmd Filetype json setlocal shiftwidth=4
+
 set showcmd
 set ruler
+set spell
 
 set nowrap
 
 "gvim
+set guioptions-=m
 set guioptions-=T
 set guioptions-=r
+set guioptions-=L
 set guifont=Noto\ Mono\ for\ Powerline\ Regular\ 12
+set guicursor=a:hor20-Cursor
 
 "shortcuts
 inoremap jj <ESC>
@@ -54,7 +63,7 @@ Plugin 'VundleVim/Vundle.vim'
 
 Plugin 'scrooloose/nerdtree'
 Plugin 'valloric/youcompleteme'
-"Plugin 'yggdroot/indentline'
+Plugin 'yggdroot/indentline'
 "Plugin 'scrooloose/syntastic'
 "Plugin 'sjl/gundo.vim'
 Plugin 'flazz/vim-colorschemes'
@@ -65,6 +74,8 @@ Plugin 'w0rp/ale'
 Plugin 'fatih/vim-go'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'rust-lang/rust.vim'
+Plugin 'tpope/vim-fugitive'
+Plugin 'chiel92/vim-autoformat'
 
 
 " All of your Plugins must be added before the following line
@@ -83,7 +94,7 @@ filetype plugin indent on    " required
 " Put your non-Plugin stuff after this line
 
 " Indentline
-"let g:indentLine_enabled = 1
+let g:indentLine_enabled = 1
 "let g:indentLine_setColors = 0
 
 " Syntastic
@@ -118,6 +129,9 @@ map <C-n> :NERDTreeToggle<CR>
 
 " Vim-colorschemes
 colorscheme molokai
+
+" vim-autoformat
+au BufWrite * :Autoformat
 
 
 " Airline
