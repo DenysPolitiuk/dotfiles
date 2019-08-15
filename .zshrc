@@ -20,6 +20,7 @@ prompt walters
 export PATH=$PATH:~/.local/bin
 export PATH="$HOME/.cargo/bin:$PATH"
 export PATH=$PATH:~/.nvm/versions/node/v12.7.0/bin
+export PATH=$PATH:~/git/binaryen/bin
 
 # Aliases
 alias ls='ls --color=auto'
@@ -68,11 +69,11 @@ if (( ${+terminfo[smkx]} )) && (( ${+terminfo[rmkx]} )); then
 	function zle-line-init () {
 		echoti smkx
 	}
-	function zle-line-finish () {
-		echoti rmkx
-	}
-	zle -N zle-line-init
-	zle -N zle-line-finish
+function zle-line-finish () {
+	echoti rmkx
+}
+zle -N zle-line-init
+zle -N zle-line-finish
 fi
 
 function zle-line-init zle-keymap-select {

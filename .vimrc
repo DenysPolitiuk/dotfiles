@@ -76,6 +76,7 @@ Plugin 'scrooloose/nerdcommenter'
 Plugin 'rust-lang/rust.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'chiel92/vim-autoformat'
+Plugin 'junegunn/fzf.vim'
 
 
 " All of your Plugins must be added before the following line
@@ -112,7 +113,7 @@ let g:indentLine_enabled = 1
 let g:ycm_python_binary_path = '/usr/bin/python3'
 let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_autoclose_preview_window_after_insertion = 1
-let g:ycm_rust_src_path = '/home/boris/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/src'
+" let g:ycm_rust_src_path = '/home/boris/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/src'
 map <C-p> :YcmCompleter GoTo<CR>
 
 " Rust.vim
@@ -123,7 +124,7 @@ let g:rustfmt_autosave = 1
 autocmd StdinReadPre * let s:std_in = 1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 " Close nerdtree if it is the only window left
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif 
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 " Nerdtree shortcut
 map <C-n> :NERDTreeToggle<CR>
 
@@ -132,13 +133,17 @@ colorscheme molokai
 
 " vim-autoformat
 au BufWrite * :Autoformat
+autocmd Filetype vim,text,rust let b:autoformat_autoindent=0
+autocmd Filetype vim,text,rust let b:autoformat_retab = 0
+autocmd Filetype vim,text,rust let b:autoformat_remove_trailing_spaces = 0
 
 
 " Airline
 let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#enabled = 1
 
 if !exists('g:airline_symbols')
-    let g:airline_symbols = {}
+	let g:airline_symbols = {}
 endif
 
 " unicode symbols
