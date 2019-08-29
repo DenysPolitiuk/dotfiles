@@ -16,11 +16,15 @@ promptinit
 # prompt
 prompt walters
 
+# TERM
+export TERM="screen-256color"
+
 # Adding local bin to path
 export PATH=$PATH:~/.local/bin
 export PATH="$HOME/.cargo/bin:$PATH"
 export PATH=$PATH:~/.nvm/versions/node/v12.7.0/bin
 export PATH=$PATH:~/git/binaryen/bin
+export PATH=$PATH:~/.gem/ruby/2.6.0/bin
 
 # Aliases
 alias ls='ls --color=auto'
@@ -92,7 +96,7 @@ zle -N zle-keymap-select
 
 # Python Virtualenvwrapper
 export WORKON_HOME=$HOME/.virtualenvs
-#source ~/.local/bin/virtualenvwrapper.sh
+# source ~/.local/bin/virtualenvwrapper.sh
 
 # Default editor
 export VISUAL=vim
@@ -103,5 +107,11 @@ export NVM_DIR="$HOME/.nvm"
 #[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 #[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
+# kubectl
+source ~/kubectl-zsh.zsh
+
 # zsh-syntax-highlighting
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# added by travis gem
+# [ -f /home/boris/.travis/travis.sh ] && source /home/boris/.travis/travis.sh

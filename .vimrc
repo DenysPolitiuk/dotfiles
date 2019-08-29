@@ -11,8 +11,16 @@ autocmd Filetype go setlocal shiftwidth=4
 
 autocmd Filetype html setlocal tabstop=4
 autocmd Filetype html setlocal shiftwidth=4
+
 autocmd Filetype json setlocal tabstop=4
 autocmd Filetype json setlocal shiftwidth=4
+
+autocmd Filetype yaml setlocal tabstop=2
+autocmd Filetype yaml setlocal shiftwidth=2
+
+autocmd Filetype javascript setlocal tabstop=2
+autocmd Filetype javascript setlocal shiftwidth=2
+
 
 set showcmd
 set ruler
@@ -75,7 +83,7 @@ Plugin 'fatih/vim-go'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'rust-lang/rust.vim'
 Plugin 'tpope/vim-fugitive'
-Plugin 'chiel92/vim-autoformat'
+"Plugin 'chiel92/vim-autoformat'
 Plugin 'junegunn/fzf.vim'
 
 
@@ -97,6 +105,8 @@ filetype plugin indent on    " required
 " Indentline
 let g:indentLine_enabled = 1
 "let g:indentLine_setColors = 0
+" undo conceal level set up
+let g:indentLine_conceallevel = 0
 
 " Syntastic
 "set statusline+=%#warningmsg#
@@ -132,7 +142,7 @@ map <C-n> :NERDTreeToggle<CR>
 colorscheme molokai
 
 " vim-autoformat
-au BufWrite * :Autoformat
+"au BufWrite * :Autoformat
 autocmd Filetype vim,text,rust let b:autoformat_autoindent=0
 autocmd Filetype vim,text,rust let b:autoformat_retab = 0
 autocmd Filetype vim,text,rust let b:autoformat_remove_trailing_spaces = 0
@@ -176,6 +186,11 @@ let g:airline#extenstions#ale#enabled = 1
 let g:ale_echo_msg_error_str = 'E'
 let g:ale_echo_msg_warning_str = 'W'
 let g:ale_echo_msg_format = '[%severity%][%linter%]: %s'
+let g:ale_fixers = {
+\   'javascript': ['prettier'],
+\   'css': ['prettier'],
+\}
+let g:ale_fix_on_save = 1
 " Ale shortcuts
 nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 nmap <silent> <C-j> <Plug>(ale_next_wrap)

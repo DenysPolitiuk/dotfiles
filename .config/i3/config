@@ -29,11 +29,11 @@ font pango: DejaVu Sans Mono 11
 #
 # double monitor set up
 # for Radeon RX 570 case with 2 monitors
-#exec --no-startup-id xrandr --output DVI-D-1 --primary --pos 0x0 --output HDMI-1 --pos 1920x0
+exec --no-startup-id xrandr --output DVI-D-1 --primary --pos 0x0 --output HDMI-1 --pos 1920x0
 # for Intel GPU case with 2 monitors
 #exec --no-startup-id xrandr --output HDMI-3 --primary --pos 0x0 --output HDMI-1 --pos 1920x0
-exec --no-startup-id xrandr --output HDMI-3 --primary --pos 0x0 --output HDMI-2 --pos 1920x0 
-exec --no-startup-id xrandr --output HDMI-3 --left-of HDMI-2
+#exec --no-startup-id xrandr --output HDMI-3 --primary --pos 0x0 --output HDMI-2 --pos 1920x0 
+#exec --no-startup-id xrandr --output HDMI-3 --left-of HDMI-2
 # load Xresources for terminal
 exec --no-startup-id xrdb ~/.Xresources
 # load background
@@ -271,7 +271,7 @@ mode "$mode_system" {
 	bindsym l exec --no-startup-id $Locker, mode "default"
 	bindsym e exec --no-startup-id i3-msg exit, mode "default"
 	bindsym s exec --no-startup-id $Locker && systemctl suspend, mode "default"
-	#bindsym h exec --no-startup-id $Locker && systemctl hibernate, mode "default"
+	bindsym h exec --no-startup-id $Locker && systemctl hibernate, mode "default"
 	bindsym r exec --no-startup-id systemctl reboot, mode "default"
 	bindsym Shift+s exec --no-startup-id systemctl poweroff -i, mode "default"
 
