@@ -19,6 +19,8 @@ prompt walters
 # TERM
 export TERM="screen-256color"
 
+# export HISTCONTROL=ignoreboth
+
 # Adding local bin to path
 export PATH=$PATH:~/.local/bin
 export PATH="$HOME/.cargo/bin:$PATH"
@@ -34,6 +36,9 @@ alias new='. new'
 alias rmi='rm -I'
 alias diff='diff --color=auto'
 alias adog='git log --all --decorate --oneline --graph'
+alias ta='tmux a -t'
+alias tn='tmux new -s'
+alias tl='tmux list-sessions'
 
 # Disable Ctrl+s. Can be fixed by using Ctrl+q
 stty -ixon

@@ -28,6 +28,11 @@ set spell
 
 set nowrap
 
+set splitbelow
+set splitright
+
+set foldmethod=indent
+
 "gvim
 set guioptions-=m
 set guioptions-=T
@@ -38,6 +43,10 @@ set guicursor=a:hor20-Cursor
 
 "shortcuts
 inoremap jj <ESC>
+nnoremap <C-j> <C-w><C-j>
+nnoremap <C-k> <C-w><C-k>
+nnoremap <C-l> <C-w><C-l>
+nnoremap <C-h> <C-w><C-h>
 
 " Vundle
 set nocompatible              " be iMproved, required
@@ -85,6 +94,7 @@ Plugin 'rust-lang/rust.vim'
 Plugin 'tpope/vim-fugitive'
 "Plugin 'chiel92/vim-autoformat'
 Plugin 'junegunn/fzf.vim'
+"Plugin 'tpope/vim-obsession'
 
 
 " All of your Plugins must be added before the following line
@@ -192,8 +202,8 @@ let g:ale_fixers = {
 \}
 let g:ale_fix_on_save = 1
 " Ale shortcuts
-nmap <silent> <C-k> <Plug>(ale_previous_wrap)
-nmap <silent> <C-j> <Plug>(ale_next_wrap)
+" nmap <silent> <C-k> <Plug>(ale_previous_wrap)
+" nmap <silent> <C-j> <Plug>(ale_next_wrap)
 
 " NERD Commenter
 " Spaces after comment delimiters

@@ -230,7 +230,7 @@ bindsym $mod+b border toggle
 
 
 #hide_edge_borders smart
-# focus_follows_mouse no
+focus_follows_mouse no
 mouse_warping none
 bindsym --release button2 kill
 
