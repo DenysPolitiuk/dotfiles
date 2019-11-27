@@ -29,11 +29,11 @@ font pango: DejaVu Sans Mono 11
 #
 # double monitor set up
 # for Radeon RX 570 case with 2 monitors
-exec --no-startup-id xrandr --output DVI-D-1 --primary --pos 0x0 --output HDMI-1 --pos 1920x0
+#exec --no-startup-id xrandr --output DVI-D-1 --primary --pos 0x0 --output HDMI-1 --pos 1920x0
 # for Intel GPU case with 2 monitors
 #exec --no-startup-id xrandr --output HDMI-3 --primary --pos 0x0 --output HDMI-1 --pos 1920x0
-#exec --no-startup-id xrandr --output HDMI-3 --primary --pos 0x0 --output HDMI-2 --pos 1920x0 
-#exec --no-startup-id xrandr --output HDMI-3 --left-of HDMI-2
+exec --no-startup-id xrandr --output HDMI-3 --primary --pos 0x0 --output HDMI-2 --pos 1920x0 
+exec --no-startup-id xrandr --output HDMI-3 --left-of HDMI-2
 # load Xresources for terminal
 exec --no-startup-id xrdb ~/.Xresources
 # load background
@@ -46,6 +46,10 @@ exec --no-startup-id compton
 exec --no-startup-id setxkbmap -option keypad:pointerkeys
 # disable DPMS and screen saver blanking at startup
 exec --no-startup-id xset s off -dpms
+# start dunst notification server
+exec --no-startup-id dunst
+# bluetooth
+exec --no-startup-id blueman-applet
 
 # set mod var as Mod1
 set $mod Mod1
@@ -230,16 +234,22 @@ bindsym $mod+b border toggle
 
 
 #hide_edge_borders smart
-focus_follows_mouse no
+# focus_follows_mouse no
 mouse_warping none
 bindsym --release button2 kill
 
 # sound buttons
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume alsa_output.pci-0000_00_1f.3.analog-stereo +5%
+#bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume alsa_output.pci-0000_00_1f.3.analog-stereo +5%
+# bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume bluez_sink.00_16_94_34_CC_49.a2dp_sink +5%
+bindsym XF86AudioRaiseVolume exec --no-startup-id add-volume
 #alsa_output.pci-0000_00_1f.3.analog-stereo +5%
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume alsa_output.pci-0000_00_1f.3.analog-stereo -5%
+#bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume alsa_output.pci-0000_00_1f.3.analog-stereo -5%
+#bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume bluez_sink.00_16_94_34_CC_49.a2dp_sink -5%
+bindsym XF86AudioLowerVolume exec --no-startup-id subtract-volume
 #alsa_output.pci-0000_00_1f.3.analog-stereo -5%
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute alsa_output.pci-0000_00_1f.3.analog-stereo toggle
+#bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute alsa_output.pci-0000_00_1f.3.analog-stereo toggle
+#bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute bluez_sink.00_16_94_34_CC_49.a2dp_sink toggle
+bindsym XF86AudioMute exec --no-startup-id toggle-mute
 #alsa_output.pci-0000_00_1f.3.analog-stereo toggle
 bindsym XF86AudioPlay exec --no-startup-id mpc play
 bindsym XF86AudioPause exec --no-startup-id mpc pause

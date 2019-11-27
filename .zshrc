@@ -9,15 +9,15 @@ zstyle :compinstall filename '/home/boris/.zshrc'
 
 autoload -Uz compinit promptinit
 compinit
-promptinit
+#promptinit
 # End of lines added by compinstall
 
 
 # prompt
-prompt walters
+#prompt walters
 
 # TERM
-export TERM="screen-256color"
+#export TERM="screen-256color"
 
 # export HISTCONTROL=ignoreboth
 
@@ -39,6 +39,7 @@ alias adog='git log --all --decorate --oneline --graph'
 alias ta='tmux a -t'
 alias tn='tmux new -s'
 alias tl='tmux list-sessions'
+alias reload-shell='source ~/.zshrc'
 
 # Disable Ctrl+s. Can be fixed by using Ctrl+q
 stty -ixon
@@ -85,13 +86,13 @@ zle -N zle-line-init
 zle -N zle-line-finish
 fi
 
-function zle-line-init zle-keymap-select {
-	RPS1="${${KEYMAP/vicmd/-- VIM --}/(main|viins)/-- INSERT --}"
-	RPS2=$RPS1
-	zle reset-prompt
-}
-zle -N zle-line-init
-zle -N zle-keymap-select
+# function zle-line-init zle-keymap-select {
+	# RPS1="${${KEYMAP/vicmd/-- VIM --}/(main|viins)/-- INSERT --}"
+	# RPS2=$RPS1
+	# zle reset-prompt
+# }
+# zle -N zle-line-init
+# zle -N zle-keymap-select
 
 # Vim runtime set up
 #export VIMRUNTIME=$HOME/.vim
@@ -101,7 +102,7 @@ zle -N zle-keymap-select
 
 # Python Virtualenvwrapper
 export WORKON_HOME=$HOME/.virtualenvs
-# source ~/.local/bin/virtualenvwrapper.sh
+#source ~/.local/bin/virtualenvwrapper.sh
 
 # Default editor
 export VISUAL=vim
@@ -117,6 +118,12 @@ source ~/kubectl-zsh.zsh
 
 # zsh-syntax-highlighting
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# zsh-autosuggestions
+source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+# starship
+eval "$(starship init zsh)"
 
 # added by travis gem
 # [ -f /home/boris/.travis/travis.sh ] && source /home/boris/.travis/travis.sh

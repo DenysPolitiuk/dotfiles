@@ -1,0 +1,5 @@
+#!/bin/bash
+SESSION_TO_USE="$(tmux list-sessions | fzf | awk '{print $1}' | tr -d :)"
+if [ -n "$SESSION_TO_USE" ]; then
+	tmux a -t $SESSION_TO_USE
+fi

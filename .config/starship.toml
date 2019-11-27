@@ -1,0 +1,17 @@
+# Don't print a new line at the start of the prompt
+add_newline = false
+
+[aws]
+disabled = true
+
+[cmd_duration]
+disabled = true
+
+[rust]
+symbol = "⚙️ "
+
+[line_break]
+disabled = false
+
+[package]
+symbol = "@ "
