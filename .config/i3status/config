@@ -1,0 +1,84 @@
+# i3status configuration file.
+# see "man i3status" for documentation.
+
+# It is important that this file is edited as UTF-8.
+# The following line should contain a sharp s:
+# ß
+# If the above line is not correctly displayed, fix your editor first!
+
+general {
+        colors = true
+        interval = 5
+}
+
+# amdgpu-pci
+order += "cpu_temperature 3"
+# SMBUSMASTER 1
+order += "cpu_temperature 2"
+# SMBUSMASTER 0
+order += "cpu_temperature 4"
+# SYSTIN
+order += "cpu_temperature 1"
+# CPUTIN
+order += "cpu_temperature 0"
+order += "cpu_usage"
+order += "path_exists VPN4"
+order += "path_exists VPN6"
+order += "volume master"
+#order += "wireless _first_"
+order += "tztime local"
+
+wireless _first_ {
+	format_up = "W: %quality%"
+	format_down = "W: down"
+}
+
+path_exists VPN4 {
+	path = "/proc/sys/net/ipv4/conf/proton0"
+}
+
+path_exists VPN6 {
+	path = "/proc/sys/net/ipv6/conf/proton0"
+}
+
+tztime local {
+        format = "%Y-%m-%d %H:%M:%S"
+}
+
+cpu_usage {
+	format = "%usage"
+}
+
+cpu_temperature 0 {
+	format = "cpu: %degrees C"
+	path = "/sys/class/hwmon/hwmon2/temp2_input"
+}
+
+cpu_temperature 1 {
+	format = "sys: %degrees C"
+	path = "/sys/class/hwmon/hwmon2/temp1_input"
+}
+
+cpu_temperature 2 {
+	format = "smbus1: %degrees C"
+	max_threshold = 95
+	path = "/sys/class/hwmon/hwmon2/temp7_input"
+}
+
+cpu_temperature 4 {
+	format = "smbus0: %degrees C"
+	max_threshold = 95
+	path = "/sys/class/hwmon/hwmon2/temp8_input"
+}
+
+cpu_temperature 3 {
+	format = "amdgpu: %degrees C"
+	path = "/sys/class/hwmon/hwmon3/temp1_input"
+}
+
+volume master{
+	#device = "pulse:alsa_output.pci-0000_00_1f.3.analog-stereo"
+	#device = "pulse:alsa_output.usb-Samson_Technologies_Samson_Meteor_Mic-00.analog-stereo"
+	format = "%volume"
+	format_muted = "muted (%volume)"
+}

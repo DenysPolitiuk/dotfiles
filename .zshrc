@@ -40,6 +40,8 @@ alias ta='tmux a -t'
 alias tn='tmux new -s'
 alias tl='tmux list-sessions'
 alias reload-shell='source ~/.zshrc'
+alias k='kubectl'
+alias protonvpn='sudo /home/boris/.virtualenvs/vpn/bin/protonvpn'
 
 # Disable Ctrl+s. Can be fixed by using Ctrl+q
 stty -ixon
@@ -124,6 +126,9 @@ source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # starship
 eval "$(starship init zsh)"
+
+# fix running some systemd units that rely on xorg
+systemctl --user import-environment
 
 # added by travis gem
 # [ -f /home/boris/.travis/travis.sh ] && source /home/boris/.travis/travis.sh

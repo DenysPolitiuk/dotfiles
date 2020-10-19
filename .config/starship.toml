@@ -4,6 +4,9 @@ add_newline = false
 [aws]
 disabled = true
 
+[kubernetes]
+disabled = false
+
 [cmd_duration]
 disabled = true
 
@@ -15,3 +18,7 @@ disabled = false
 
 [package]
 symbol = "@ "
+
+[time]
+disabled = false
+format = "[%F@%T]"

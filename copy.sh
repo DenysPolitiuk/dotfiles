@@ -3,10 +3,11 @@ cp ~/.config/cava/config .config/cava
 cp ~/.config/compton.conf .config
 cp ~/.config/conky/conky.conf .config/conky
 cp ~/.config/i3/config .config/i3
+cp ~/.config/i3status/config .config/i3status/config
 cp ~/.config/mpd/mpd.conf .config/mpd
 cp ~/.config/ranger/rc.conf .config/ranger
 cp ~/.config/youtube-dl/config .config/youtube-dl
-cp ~/.i3status.conf .
+#cp ~/.i3status.conf .
 cp ~/.ncmpcpp/config .ncmpcpp
 cp ~/.vimrc .
 cp ~/.Xresources .
