@@ -18,3 +18,4 @@ cp ~/.local/bin/add-volume .local/bin/
 cp ~/.local/bin/subtract-volume .local/bin/
 cp ~/.local/bin/tla .local/bin/
 cp ~/.local/bin/toggle-mute .local/bin/
+cp ~/.local/bin/tla .local/bin/tla
