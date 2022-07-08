@@ -41,7 +41,11 @@ alias tn='tmux new -s'
 alias tl='tmux list-sessions'
 alias reload-shell='source ~/.zshrc'
 alias k='kubectl'
-alias protonvpn='sudo /home/boris/.virtualenvs/vpn/bin/protonvpn'
+alias t='terraform'
+# alias protonvpn='sudo /home/boris/.virtualenvs/vpn/bin/protonvpn'
+alias protonvpn='sudo /home/boris/.virtualenvs/vpn-3-10/bin/protonvpn'
+alias cut='shnsplit -f *.cue -o flac *flac -t '%n-%p-%t' && cuetag.sh *cue 0*flac 1*flac'
+alias :q='exit'
 
 # Disable Ctrl+s. Can be fixed by using Ctrl+q
 stty -ixon
@@ -104,7 +108,7 @@ fi
 
 # Python Virtualenvwrapper
 export WORKON_HOME=$HOME/.virtualenvs
-#source ~/.local/bin/virtualenvwrapper.sh
+source ~/.local/bin/virtualenvwrapper.sh
 
 # Default editor
 export VISUAL=vim
@@ -128,7 +132,7 @@ source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 eval "$(starship init zsh)"
 
 # fix running some systemd units that rely on xorg
-systemctl --user import-environment
+#systemctl --user import-environment
 
 # added by travis gem
 # [ -f /home/boris/.travis/travis.sh ] && source /home/boris/.travis/travis.sh

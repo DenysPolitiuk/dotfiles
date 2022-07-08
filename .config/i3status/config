@@ -13,10 +13,6 @@ general {
 
 # amdgpu-pci
 order += "cpu_temperature 3"
-# SMBUSMASTER 1
-order += "cpu_temperature 2"
-# SMBUSMASTER 0
-order += "cpu_temperature 4"
 # SYSTIN
 order += "cpu_temperature 1"
 # CPUTIN
@@ -51,29 +47,17 @@ cpu_usage {
 
 cpu_temperature 0 {
 	format = "cpu: %degrees C"
-	path = "/sys/class/hwmon/hwmon2/temp2_input"
+	path = "/sys/class/hwmon/hwmon3/temp2_input"
 }
 
 cpu_temperature 1 {
 	format = "sys: %degrees C"
-	path = "/sys/class/hwmon/hwmon2/temp1_input"
-}
-
-cpu_temperature 2 {
-	format = "smbus1: %degrees C"
-	max_threshold = 95
-	path = "/sys/class/hwmon/hwmon2/temp7_input"
-}
-
-cpu_temperature 4 {
-	format = "smbus0: %degrees C"
-	max_threshold = 95
-	path = "/sys/class/hwmon/hwmon2/temp8_input"
+	path = "/sys/class/hwmon/hwmon3/temp1_input"
 }
 
 cpu_temperature 3 {
 	format = "amdgpu: %degrees C"
-	path = "/sys/class/hwmon/hwmon3/temp1_input"
+	path = "/sys/class/hwmon/hwmon2/temp1_input"
 }
 
 volume master{

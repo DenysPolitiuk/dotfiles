@@ -95,6 +95,7 @@ Plugin 'tpope/vim-fugitive'
 "Plugin 'chiel92/vim-autoformat'
 Plugin 'junegunn/fzf.vim'
 "Plugin 'tpope/vim-obsession'
+Plugin 'hashivim/vim-terraform'
 
 
 " All of your Plugins must be added before the following line
@@ -209,3 +210,6 @@ let g:ale_fix_on_save = 1
 " Spaces after comment delimiters
 let g:NERDSpaceDelims = 1
 let g:NERDTrimTrailingWhitespace = 1
+
+" Terraform
+let g:terraform_fmt_on_save=1

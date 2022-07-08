@@ -1,4 +1,6 @@
-URxvt.font: xft:DejaVu Sans Mono:size=14:antialias=true,xft:DejaVu Sans Mono for Powerline:size=14:antialias=true
+URxvt.font: xft:DejaVu Sans Mono:size=12:antialias=true,xft:DejaVu Sans Mono for Powerline:size=12:antialias=true
+! URxvt.font: xft:DejaVu Sans Mono:size=8:antialias=true,xft:DejaVu Sans Mono for Powerline:size=8:antialias=true
+Xcursor.size: 8
 URxvt.letterSpace: -1
 URxvt.secondaryScreen: 1
 URxvt.secondaryScroll: 0

@@ -27,14 +27,8 @@ font pango: DejaVu Sans Mono 11
 
 # startup stuff
 #
-# double monitor set up
-# for Radeon RX 570 case with 2 monitors
-# exec --no-startup-id xrandr --output DVI-D-1 --primary --pos 0x0 --output HDMI-1 --pos 1920x0
-exec --no-startup-id xrandr --output DVI-D-1 --primary --pos 0x0 --output DP-1 --pos 1920x0 --output HDMI-1 --pos 4480x0
-# for Intel GPU case with 2 monitors
-#exec --no-startup-id xrandr --output HDMI-3 --primary --pos 0x0 --output HDMI-1 --pos 1920x0
-#exec --no-startup-id xrandr --output HDMI-3 --primary --pos 0x0 --output HDMI-2 --pos 1920x0 
-#exec --no-startup-id xrandr --output HDMI-3 --left-of HDMI-2
+# monitor setup
+exec --no-startup-id xrandr --output DP-1 --primary --mode 2560x1440 -r 144.00 --pos 1280x0 --output HDMI-1 --mode 5120x1440 -r 60.00 --pos 0x1440 --output DVI-D-1 --mode 1920x1080 --pos 3840x0 -r 60.00
 # load Xresources for terminal
 exec --no-startup-id xrdb ~/.Xresources
 # load background
@@ -52,6 +46,9 @@ exec --no-startup-id xset s off -dpms
 exec --no-startup-id dunst
 # bluetooth
 #exec --no-startup-id blueman-applet
+# change mouse sens
+exec --no-startup-id xinput --set-prop 12 151 0.8 0 0 0 0.8 0 0 0 2
+exec --no-startup-id xinput --set-prop 12 298 0
 
 # set mod var as Mod1
 set $mod Mod1
@@ -168,9 +165,11 @@ bindsym Mod1+Shift+9 move container to workspace 9
 bindsym Mod1+Shift+0 move container to workspace 0
 
 # bind workspaces to specific monitors
-workspace 1 output DP-1
+workspace 1 output HDMI-1
+workspace 2 output DP-1
 workspace 0 output DVI-D-1
-workspace 2 output HDMI-1
+workspace 7 output DVI-D-1
+workspace 9 output DVI-D-1
 
 # reload the configuration file
 bindsym Mod1+Shift+c reload
@@ -217,16 +216,17 @@ bar {
 	mode hide
 	hidden_state hide
 	modifier Mod4
+	# font pango:DejaVu Sans Mono 8
 }
 
-#bar {
-#	id bar-2
-#	output HDMI-4
-#	position top
-#	mode hide
-#	hidden_state hide
-#	modifier Mod4
-#}
+# bar {
+	# id bar-2
+	# output HDMI-4
+	# position top
+	# mode hide
+	# hidden_state hide
+	# modifier Mod4
+# }
 
 bindsym Mod4+b bar mode toggle
 
